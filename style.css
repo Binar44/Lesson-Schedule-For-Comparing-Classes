@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+h1 {
+    color: aliceblue;
+    border-bottom: 5px solid red;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+h2 {
+    color: aliceblue;
+}
+
+h3 {
+    padding-left: 30px;
+    color: aliceblue;
+}
+
+h4 {
+    color: aliceblue;
+}
+
+body {
+    background-color: rgb(26, 27, 31);
+    margin: 0;
+}
+
+header {
+    height: 40px;
+    width: 100%;
+    background-color: rgb(14, 15, 17);
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#main {
+    width: 1300px;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    align-items: center;
+    padding-top: 60px;
+    background-color: rgb(19, 20, 23);
+}
+
+#daySelector {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+
+#weekSelector {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+}
+
+.selectorButton {
+    background-color: rgb(45, 47, 53);
+    border: solid 3px black;
+    border-radius: 5px;
+    color: aliceblue;
+    font-size: 40;
+    font-weight: bold;
+}
+
+.selectorButton:focus {
+    border: solid 3px black;
+    border-radius: 5px;
+    border-bottom: solid 3px red;
+}
+
+.selectorButton:hover {
+    border-bottom: solid 3px red;
+}
+
+.planLink {
+    transition: 100ms;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.planLink:hover {
+    transition: 100ms;
+    color: rgb(255, 202, 202);
+    background-color: rgb(55, 50, 74);
+}
+
+#planArea {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+}
+
+#plan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#asd {
+    height: 1101px;
+}
+
+.segment {
+    width: 290px;
+    display: flex;
+}
+
+.segmentTime {
+    width: 36px;
+}
+
+.time {
+    margin: 0;
+    margin-right: 10%;
+    color: aliceblue;
+    font-size: 11px;
+    float: right;
+    transform: translateY(-7px);
+}
+
+.segmentContent {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.segmentEmptySpace {
+    width: 0;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(19, 20, 23);
+}
+
+.space {
+    width: 85%;
+    height: 15px;
+    background-color: rgb(52, 52, 52);
+    /* padding: 0 30px; */
+    text-align: center;
+}
+
+.zaj {
+    background-color: rgb(42, 218, 121);
+    border-left: 2px solid color-mix(in srgb, var(--baseColor), #000 50%);
+    border-right: 2px solid color-mix(in srgb, var(--baseColor), #000 50%);
+    /* border-left: 2px solid rgb(0, 0, 0);
+    border-right: 2px solid rgb(0, 0, 0); */
+}
+
+.now {
+    border-left: 2px solid rgb(255, 0, 0);
+}
+
+.typeLetter {
+    float: right;
+    border: 2px solid color-mix(in srgb, var(--baseColor), #000 50%);
+    border-radius: 2px;
+    transform: translateX(1.5px);
+    width: 28px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.line.zaj {
+    border-left: 20px solid rgb(19, 20, 23);
+    border-right: 20px solid rgb(19, 20, 23);
+}
+
+.zl {
+    background-color: rgb(52, 52, 52) !important;
+    border-left: 20px solid rgb(19, 20, 23);
+    border-right: 20px solid rgb(19, 20, 23);
+}
+
+.lp {
+    background-color: rgb(72, 72, 72) !important;
+}
+
+.lc {
+    border-left: 20px solid rgb(19, 20, 23);
+    border-right: 20px solid rgb(19, 20, 23);
+}
+
+.lzaj {
+    background-color: rgb(57, 72, 72) !important;
+    border: none;
+}
+
+.lz {
+    border-left: 20px solid rgb(72, 72, 72);
+    border-right: 20px solid rgb(72, 72, 72);
+}
+
+.rindex0 {
+    font-size: 12px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top: 2px solid color-mix(in srgb, var(--baseColor), #000 50%);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 85%;
+    max-width: 85%;
+    line-height: 14px;
+}
+
+.rindex1 {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.rindex2 {
+    font-size: 12px;
+}
+
+.rindex3 {
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: 2px solid color-mix(in srgb, var(--baseColor), #000 50%);
+}

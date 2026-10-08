@@ -1,5 +1,14 @@
 <?php
 
+session_start();
+
+if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){} else {
+    $_SESSION['logged'] = false;
+    header("Location: index.php");
+    exit();
+}
+
+
 require_once("connect.php");
 
 if(isset($_GET['week'])){
@@ -24,20 +33,9 @@ $row1 = mysqli_fetch_array($result1);
 $sql2 = 'SELECT `groupID` FROM `groups` WHERE `weekType` = "'.$week.'" ORDER BY groupOrder';
 $result2 = mysqli_query($connection, $sql2);
 
-// $row2 = mysqli_fetch_array($result2);
-// $sql12 = 'SELECT c.classID, c.termID, c.groupID, c.indexStart, c.indexStop, ct.typeColor, c.row1, c.row2, c.row3, c.row4, ct.typeLetter FROM `classes` AS c JOIN `classtypes` AS ct ON c.classTypeID = ct.classTypeID WHERE c.termID = '.$row1[0].' AND c.groupID = '.$row2[0].' ORDER BY c.indexStart';
-// $row2 = mysqli_fetch_array($result2);
-// $sql13 = 'SELECT c.classID, c.termID, c.groupID, c.indexStart, c.indexStop, ct.typeColor, c.row1, c.row2, c.row3, c.row4, ct.typeLetter FROM `classes` AS c JOIN `classtypes` AS ct ON c.classTypeID = ct.classTypeID WHERE c.termID = '.$row1[0].' AND c.groupID = '.$row2[0].' ORDER BY c.indexStart';
-// $row2 = mysqli_fetch_array($result2);
-// $sql14 = 'SELECT c.classID, c.termID, c.groupID, c.indexStart, c.indexStop, ct.typeColor, c.row1, c.row2, c.row3, c.row4, ct.typeLetter FROM `classes` AS c JOIN `classtypes` AS ct ON c.classTypeID = ct.classTypeID WHERE c.termID = '.$row1[0].' AND c.groupID = '.$row2[0].' ORDER BY c.indexStart';
-
-// $result12 = mysqli_query($connection, $sql12);
-// $result13 = mysqli_query($connection, $sql13);
-// $result14 = mysqli_query($connection, $sql14);
-
-// $sql1 = 'SELECT * FROM `terms` WHERE termID = '.$_GET['tid'];
-// $result1 = mysqli_query($connection, $sql1);
-// $row1 = mysqli_fetch_array($result1);
+$sql3 = 'SELECT COUNT(*) FROM `groups` WHERE `weekType` = "'.$week.'";';
+$result3 = mysqli_query($connection, $sql3);
+$row3 = mysqli_fetch_array($result3);
 
 ?>
 
@@ -73,7 +71,7 @@ $result2 = mysqli_query($connection, $sql2);
 
 <?php
 
-$amountOfStudents = 4;
+$amountOfStudents = $row3[0];
 
 // Generating schedule for all people
 for($student = 0; $student < $amountOfStudents; $student++){

@@ -80,14 +80,14 @@ for($student = 0; $student < $amountOfStudents; $student++){
     $sql11 = 'SELECT c.classID, c.termID, c.groupID, c.indexStart, c.indexStop, ct.typeColor, c.row1, c.row2, c.row3, c.row4, ct.typeLetter FROM `classes` AS c JOIN `classtypes` AS ct ON c.classTypeID = ct.classTypeID WHERE c.termID = '.$row1[0].' AND c.groupID = '.$row2[0].' ORDER BY c.indexStart';
     $result11 = mysqli_query($connection, $sql11);
 
-                ECHO <<< plan123
+ECHO <<< plan123
                 <div id="plan">
                     <h3>
-                plan123;
+plan123;
                     
                         $row = mysqli_fetch_array($result);
                         echo $row[0];
-                    ECHO <<< plan123
+ECHO <<< plan123
                     </h3>
                     <div id="asd">
                         <!-- <div class="segment">
@@ -100,7 +100,7 @@ for($student = 0; $student < $amountOfStudents; $student++){
                             </div>
                             <div class="segmentEmptySpace"></div>
                         </div> -->
-                    plan123;
+plan123;
 
     for($i = 0; $i < 55; $i++){
         #Time Calculating
@@ -173,7 +173,7 @@ for($student = 0; $student < $amountOfStudents; $student++){
         }
     }
 
-                ECHO <<< plan123
+ECHO <<< plan123
                         <div class="segment">
                             <div class="segmentTime">
                                 <!-- <p class="time">21:15</p> -->
@@ -185,7 +185,7 @@ for($student = 0; $student < $amountOfStudents; $student++){
                         </div>
                     </div>
                 </div>
-                plan123;
+plan123;
 }
 ?>
 
